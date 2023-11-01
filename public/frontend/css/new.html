@@ -1,0 +1,164 @@
+<div class="check-out-area section-padding" style="padding-top: 50px">
+    <div class="container">
+     <form action="{{ url('cart/shipping/store')}}" method="post">
+        @csrf
+        <div class="row d-flex justify-content-between">
+            <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" id="headingTwo">
+                            <h4 class="panel-title">
+                                <span><i class="fa fa-truck"></i></span>
+                                 Billing Information
+                            </h4>
+                        </div>
+                         <div class="panel-body">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p class="form-row">
+                                                <input type="text" name="name" placeholder="Full Name *">
+                                                @error('name')
+                                                  <span style="color: red">{{$message}}</span>
+                                                @enderror
+                                            </p>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <p class="form-row">
+                                                <input type="address" name="address" placeholder="Address *">
+                                                @error('name')
+                                                <span style="color: red">{{$message}}</span>
+                                                @enderror
+                                            </p>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <p class="form-row">
+                                                <input type="email" name="email" placeholder="Email Address">
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="form-row">
+                                                <input type="text" name="mobile" placeholder="Mobile *">
+                                                @error('mobile')
+                                                <span style="color: red">{{$message}}</span>
+                                                @enderror
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+                            </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <span><i class="fa fa-money"></i></span>
+                                   Payment Information
+                            </h4>
+                        </div>
+
+                            <div class="panel-body no-padding">
+                                <div class="payment-met">
+                                    <form action="#" id="payment-form">
+                                        <ul class="form-list">
+                                            <li class="control">
+                                                <input type="radio" class="radio" title="Check / Money order" name="payment[method]" id="p_method_checkmo">
+                                                <label for="p_method_checkmo">Check / Money order </label>
+                                            </li>
+                                            <li class="control">
+                                                <input type="radio" class="radio" title="Credit Card (saved)" name="payment[method]" id="p_method_ccsave">
+                                                <label for="p_method_ccsave">Credit Card (saved) </label>
+                                            </li>
+                                        </ul>
+                                    </form>
+                                    <div class="buttons-set">
+                                        <button class="btn btn-default">CONTINUE</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <span><i class="fa fa-money"></i></span>
+                            Order Review
+                        </h4>
+                    </div>
+
+                        <div class="panel-body no-padding">
+                            <div class="order-review" id="checkout-review">
+                                <div class="table-responsive" id="checkout-review-table-wrapper">
+                                    <table class="data-table" id="checkout-review-table">
+                                        <thead>
+                                            <tr>
+                                                <th rowspan="1">Product Name</th>
+                                                <th colspan="1">Price</th>
+                                                <th rowspan="1">Qty</th>
+                                                <th colspan="1">Subtotal</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><h3 class="product-name">People of the book</h3></td>
+                                                <td><span class="cart-price"><span class="check-price">$155.00</span></span></td>
+                                                <td>1</td>
+                                                <!-- sub total starts here -->
+                                                <td><span class="cart-price"><span class="check-price">$155.00</span></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><h3 class="product-name">The secret garden</h3></td>
+                                                <td><span class="cart-price"><span class="check-price">$222.00</span></span></td>
+                                                <td>1</td>
+                                                <!-- sub total starts here -->
+                                                <td><span class="cart-price"><span class="check-price">$222.00</span></span></td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="3">Subtotal</td>
+                                                <td><span class="check-price">$377.00</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3">Shipping Handling (Flat Rate - Fixed)</td>
+                                                <td><span class="check-price">$10.00</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3"><strong>Grand Total</strong></td>
+                                                <td><strong><span class="check-price">$387.00</span></strong></td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <div id="checkout-review-submit">
+                                    <div class="cart-btn-3" id="review-buttons-container">
+                                        <p class="left">Forgot an Item? <a href="#">Edit Your Cart</a></p>
+                                        <button type="submit" title="Place Order" class="btn btn-default"><span>Place Order</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+<!-- Check Out Area End -->
